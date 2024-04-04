@@ -15,7 +15,7 @@
                 <span class="flex p-2 cursor-pointer transition-all font-medium flex-wrap items-center justify-center lg:gap-x-12 gap-4">
                     <img class="w-8 h-8 scale-125" src="https://tr.rbxcdn.com/489c8f1c4969ba192df340d76a5a18a0/420/420/Hat/Png" alt="">
                     <span class="flex flex-wrap items-center gap-x-2">
-                        <span v-for="(page, i_page) in pages" class="lg:flex hidden p-2 transition-all rounded-xl flex items-center justify-center hover:bg-emerald-300/30 hover:text-emerald-300 cursor-pointer text-sm">
+                        <span v-for="(page, i_page) in pages" @click="changePage(i_page)" class="lg:flex hidden p-2 transition-all rounded-xl flex items-center justify-center hover:bg-emerald-300/30 hover:text-emerald-300 cursor-pointer text-sm">
                             {{ page.label }}
                         </span>
                         <span class="font-medium lg:hidden">
@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            <footer class="absolute hidden lg:flex flex-col bottom-0 z-0 bg-zinc-950 w-full h-fit px-6 py-4 mt-22">
+            <footer class="absolute hidden lg:flex flex-col bottom-0 z-0 bg-zinc-950 w-full h-fit px-6 py-4">
                 <section class="w-full h-fit text-lg text-zinc-300">
                     Footer
                 </section>
@@ -86,50 +86,77 @@
                 pages: [
                     {
                         label: 'PayPal Transfer',
-                        active: true,
+                        active: false,
                         icon: 'sr-hand-holding-usd',
                         products: [
                             {
                                 name: '1200$ Transf.',
                                 price: '100,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
+                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
                             },
                             {
                                 name: '2200$ Transf.',
                                 price: '200,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
+                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
                             },
                             {
                                 name: '3200$ Transf.',
                                 price: '300,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
+                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
                             },
                             {
                                 name: '4200$ Transf.',
                                 price: '400,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
+                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
                             },
                             {
                                 name: '5200$ Transf.',
                                 price: '500,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
+                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
                             },
                             {
                                 name: '6200$ Transf.',
                                 price: '600,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
+                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
                             },
                             {
                                 name: '7200$ Transf.',
                                 price: '700,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
+                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
                             },
                         ]
                     },
                     {
                         label: 'White CC',
-                        active: false,
-                        icon: 'sr-credit-card'
+                        active: true,
+                        icon: 'sr-credit-card',
+                        products: [
+                            {
+                                name: '1000$ CC',
+                                price: '150.00$',
+                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                            },
+                            {
+                                name: '2000$ CC',
+                                price: '250.00$',
+                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                            },
+                            {
+                                name: '3000$ CC',
+                                price: '350.00$',
+                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                            },
+                            {
+                                name: '4000$ CC',
+                                price: '450.00$',
+                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                            },
+                            {
+                                name: '5000$ CC',
+                                price: '550.00$',
+                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                            },
+                        ],
                     },
                     {
                         label: 'Fake Money',
@@ -143,8 +170,12 @@
                     },
                 ]
             },
-            methods() {
-
+            methods: {
+                changePage: function(index) {
+                    for (var i = 0; i < this.pages.length; i++) {
+                        this.pages[i].active = (i === index);
+                    }
+                }
             },
             mounted() {
 
