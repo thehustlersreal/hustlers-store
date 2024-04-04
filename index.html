@@ -11,14 +11,14 @@
 <body>
     <div id="wrapper" class="absolute left-0 top-0 w-full h-full bg-black bg-center bg-no-repeat bg-cover bg-[url('https://pbs.twimg.com/media/Ebyo327UMAAiRhs.jpg:large')] overflow-x-hidden overflow-y-scroll">
         <div class="absolute left-0 top-0 w-full h-fit bg-black/20 lg:bg-black/40 flex flex-col overflow-x-hidden overflow-y-scroll">
-            <header class="fixed w-full h-fit px-6 py-3 bg-black/30 backdrop-blur-md flex flex-wrap items-center justify-between lg:gap-x-12 text-white z-20">
+            <header class="fixed w-full h-fit px-6 py-3 bg-black/40 backdrop-blur-md flex flex-wrap items-center justify-between lg:gap-x-12 text-white z-20">
                 <span class="flex p-2 cursor-pointer transition-all font-medium flex-wrap items-center justify-center lg:gap-x-12 gap-4">
                     <img class="w-8 h-8 scale-125" src="https://tr.rbxcdn.com/489c8f1c4969ba192df340d76a5a18a0/420/420/Hat/Png" alt="">
                     <span class="flex flex-wrap items-center gap-x-2">
                         <span v-for="(page, i_page) in pages" class="lg:flex hidden p-2 transition-all rounded-xl flex items-center justify-center hover:bg-emerald-300/30 hover:text-emerald-300 cursor-pointer text-sm">
                             {{ page.label }}
                         </span>
-                        <span class="font-medium">
+                        <span class="font-medium lg:hidden">
                             Hustlers
                         </span>
                     </span>
@@ -33,7 +33,7 @@
                 </span>
             </header>
 
-            <nav class="fixed bottom-0 lg:hidden w-full h-fit px-6 py-4 bg-black/20 backdrop-blur-sm flex flex-wrap gap-x-4 items-center justify-between z-20">
+            <nav class="fixed bottom-0 lg:hidden w-full h-fit px-6 py-4 bg-black/40 backdrop-blur-sm flex flex-wrap gap-x-4 items-center justify-between z-20">
                 <a :class="{ 'text-emerald-500' : page.active }" v-for="(page, i_page) in pages" class="text-zinc-500/70 transition-all flex flex-col space-y-2 text-2xl items-center justify-center text-center w-[15vw]" href="">
                     <i :class="'fi fi-' + page.icon"></i>
                     <p :class="{ 'text-emerald-500' : page.active }" class="text-xs font-normal text-zinc-500 w-[15vw] overflow-hidden break-normal whitespace-nowrap text-ellipsis">{{ page.label }}</p>
@@ -91,32 +91,37 @@
                         products: [
                             {
                                 name: '1200$ Transf.',
-                                label: '12% EXTRA',
                                 price: '100,00$',
                                 thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
                             },
                             {
-                                name: '1200$ Transf.',
-                                label: '12% EXTRA',
-                                price: '100,00$',
+                                name: '2200$ Transf.',
+                                price: '200,00$',
                                 thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
                             },
                             {
-                                name: '1200$ Transf.',
-                                label: '12% EXTRA',
-                                price: '100,00$',
+                                name: '3200$ Transf.',
+                                price: '300,00$',
                                 thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
                             },
                             {
-                                name: '1200$ Transf.',
-                                label: '12% EXTRA',
-                                price: '100,00$',
+                                name: '4200$ Transf.',
+                                price: '400,00$',
                                 thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
                             },
                             {
-                                name: '1200$ Transf.',
-                                label: '12% EXTRA',
-                                price: '100,00$',
+                                name: '5200$ Transf.',
+                                price: '500,00$',
+                                thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
+                            },
+                            {
+                                name: '6200$ Transf.',
+                                price: '600,00$',
+                                thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
+                            },
+                            {
+                                name: '7200$ Transf.',
+                                price: '700,00$',
                                 thumbnail: 'https://i1.sndcdn.com/artworks-wxim7o544nVmciWM-ztXlEw-t500x500.jpg'
                             },
                         ]
