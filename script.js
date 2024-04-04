@@ -63,6 +63,6 @@ var app = new Vue({
 
     },
     created() {
-        //
+        console.log('Active');
     }
 })
