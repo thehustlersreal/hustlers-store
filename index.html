@@ -34,7 +34,7 @@
             </header>
 
             <nav class="fixed bottom-0 lg:hidden w-full h-fit px-6 py-4 bg-black/40 backdrop-blur-sm flex flex-wrap gap-x-4 items-center justify-between z-20">
-                <a :class="{ 'text-emerald-500' : page.active }" v-for="(page, i_page) in pages" class="text-zinc-500/70 transition-all flex flex-col space-y-2 text-2xl items-center justify-center text-center w-[15vw]" href="">
+                <a :class="{ 'text-emerald-500' : page.active }" v-for="(page, i_page) in pages" @click="changePage(i_page)" class="text-zinc-500/70 transition-all flex flex-col space-y-2 text-2xl items-center justify-center text-center w-[15vw]" href="">
                     <i :class="'fi fi-' + page.icon"></i>
                     <p :class="{ 'text-emerald-500' : page.active }" class="text-xs font-normal text-zinc-500 w-[15vw] overflow-hidden break-normal whitespace-nowrap text-ellipsis">{{ page.label }}</p>
                 </a>
