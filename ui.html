@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <title>Hustlers - 💸</title>
+</head>
+<body>
+    <div id="wrapper" class="absolute left-0 top-0 w-full h-full bg-black bg-center bg-no-repeat bg-cover bg-[url('https://pbs.twimg.com/media/Ebyo327UMAAiRhs.jpg:large')] overflow-x-hidden overflow-y-scroll">
+        <div class="absolute left-0 top-0 w-full h-fit bg-black/20 lg:bg-black/40 flex flex-col overflow-x-hidden overflow-y-scroll">
+            <header class="fixed w-full h-fit px-6 py-3 bg-black/30 backdrop-blur-md flex flex-wrap items-center justify-between lg:gap-x-12 text-white z-20">
+                <span class="flex p-2 cursor-pointer transition-all font-medium flex-wrap items-center justify-center lg:gap-x-12 gap-4">
+                    <img class="w-8 h-8 scale-125" src="https://tr.rbxcdn.com/489c8f1c4969ba192df340d76a5a18a0/420/420/Hat/Png" alt="">
+                    <span class="flex flex-wrap items-center gap-x-2">
+                        <span v-for="(page, i_page) in pages" class="lg:flex hidden p-2 transition-all rounded-xl flex items-center justify-center hover:bg-emerald-300/30 hover:text-emerald-300 cursor-pointer text-sm">
+                            {{ page.label }}
+                        </span>
+                        <span class="font-medium">
+                            Hustlers
+                        </span>
+                    </span>
+                </span>
+                <span class="w-fit h-full flex flex-wrap gap-x-4 items-center justify-center"> 
+                    <button class="bg-emerald-500 text-xs lg:text-sm text-white flex items-center justify-center lg:px-3 lg:py-2 px-2 py-1 rounded-2xl">
+                        Telegram
+                    </button>
+                    <button class="bg-emerald-500 text-xs lg:text-sm text-white flex items-center justify-center lg:px-3 lg:py-2 px-2 py-1 rounded-2xl">
+                        Contact us
+                    </button>
+                </span>
+            </header>
+
+            <nav class="fixed bottom-0 lg:hidden w-full h-fit px-6 py-4 bg-black/20 backdrop-blur-sm flex flex-wrap gap-x-4 items-center justify-between z-20">
+                <a :class="{ 'text-emerald-500' : page.active }" v-for="(page, i_page) in pages" class="text-zinc-500/70 transition-all flex flex-col space-y-2 text-2xl items-center justify-center text-center w-[15vw]" href="">
+                    <i :class="'fi fi-' + page.icon"></i>
+                    <p :class="{ 'text-emerald-500' : page.active }" class="text-xs font-normal text-zinc-500 w-[15vw] overflow-hidden break-normal whitespace-nowrap text-ellipsis">{{ page.label }}</p>
+                </a>
+            </nav>
+
+            <!-- PAGES -->
+
+            <div class="relative w-full h-full p-6 pt-24 pb-36 flex flex-col">
+                <div v-for="(page, i_page) in pages" :class="{ 'hidden' : !page.active }" class="relative w-full h-full flex flex-col items-center lg:justify-normal justify-center gap-y-12">
+                    <header class="font-bold text-3xl text-white w-full h-fit ">
+                        {{ page.label }}
+                    </header>
+                    <main class="w-full h-full grid lg:grid-cols-4 grid-cols-1 gap-12 overflow-y-scroll overflow-hidden">
+                        <div v-for="(product, i_product) in page.products" class="col-span-1 lg:h-[370] h-[450] rounded-2xl bg-black/30 backdrop-blur-sm p-4 flex flex-col">
+                            <span class="w-full h-auto">
+                                <img :src='product.thumbnail' class="rounded-2xl object-cover">
+                            </span>
+                            <span class="w-full h-full py-2 flex flex-col justify-center">
+                                <h1 class="text-white font.medium">{{ product.name }}</h1>
+                                <p class="text-sm text-zinc-400">Price: {{ product.price }}</p>
+                                <span class="w-full flex items-center gap-x-2 py-2">
+                                    <button class="rounded-xl w-full py-2 flex items-center justify-center bg-emerald-500 text-white text-sm flex items-center justfiy-center transition-all cursor-pointer hover:opacity-80">
+                                        Buy
+                                    </button>
+                                </span>
+                            </span>
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+            <footer class="absolute hidden lg:flex flex-col bottom-0 z-0 bg-zinc-950 w-full h-fit px-6 py-4 mt-22">
+                <section class="w-full h-fit text-lg text-zinc-300">
+                    Footer
+                </section>
+                <span class="w-full h-[1px] bg-zinc-700 my-2"></span>
+                <section class="w-full h-fit flex flex-col space-y-1 text-zinc-500 text-sm">
+                    <p>Telegram chat: t.me/****</p>
+                    <p>Web Developer: "samu</p>
+                </section>
+            </footer>
+        </div>
+    </div>
+    <script src="/app.js"></script>
+</body>
+</html>
