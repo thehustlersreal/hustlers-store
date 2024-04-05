@@ -48,20 +48,16 @@
                         {{ page.label }}
                     </header>
                     <main class="w-full h-full grid lg:grid-cols-4 grid-cols-1 gap-12 overflow-y-scroll overflow-hidden">
-                        <div v-for="(product, i_product) in page.products" class="col-span-1 lg:h-[370] h-[450] rounded-2xl bg-black/30 backdrop-blur-sm p-4 flex flex-col">
-                            <span class="w-full h-auto">
-                                <img :src='product.thumbnail' class="rounded-2xl object-cover">
+                        <span v-for='(product, i_product) in page.products' class="col-span-1 h-[350px] bg-black/40 backdrop-blur-md rounded-2xl flex flex-col space-y-1 p-4">
+                            <img class="w-full h-fit rounded-2xl opacity-80" :src="product.thumbnail">
+                            <span class="w-fit h-fit">
+                                <h1 class="text-lg text-white">{{product.name}}</h1>
+                                <p class="text-md text-zinc-500">{{product.price}}</p>
                             </span>
-                            <span class="w-full h-full py-2 flex flex-col justify-center">
-                                <h1 class="text-white font.medium">{{ product.name }}</h1>
-                                <p class="text-sm text-zinc-400">Price: {{ product.price }}</p>
-                                <span class="w-full flex items-center gap-x-2 py-2">
-                                    <button class="rounded-xl w-full py-2 flex items-center justify-center bg-emerald-500 text-white text-sm flex items-center justfiy-center transition-all cursor-pointer hover:opacity-80">
-                                        Buy
-                                    </button>
-                                </span>
-                            </span>
-                        </div>
+                            <button class="w-full py-1 flex items-center justify-center bg-emerald-400 rounded-lg text-white">
+                                Buy
+                            </button>
+                        </span>
                     </main>
                 </div>
             </div>
@@ -92,37 +88,37 @@
                             {
                                 name: '1200$ Transf.',
                                 price: '100,00$',
-                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '2200$ Transf.',
                                 price: '200,00$',
-                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '3200$ Transf.',
                                 price: '300,00$',
-                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '4200$ Transf.',
                                 price: '400,00$',
-                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '5200$ Transf.',
                                 price: '500,00$',
-                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '6200$ Transf.',
                                 price: '600,00$',
-                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '7200$ Transf.',
                                 price: '700,00$',
-                                thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Paypal_2014_logo.png'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                         ]
                     },
@@ -134,27 +130,27 @@
                             {
                                 name: '1000$ CC',
                                 price: '150.00$',
-                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '2000$ CC',
                                 price: '250.00$',
-                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '3000$ CC',
                                 price: '350.00$',
-                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '4000$ CC',
                                 price: '450.00$',
-                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '5000$ CC',
                                 price: '550.00$',
-                                thumbnail: 'https://m.media-amazon.com/images/I/61rAbTgElCL._UXNaN_FMjpg_QL85_.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                         ],
                     },
@@ -166,37 +162,37 @@
                             {
                                 name: '1000$ Fakes',
                                 price: '50,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-NeyXExkbVtDDnyuU-II1CPA-t500x500.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '2000$ Fakes',
                                 price: '100,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-NeyXExkbVtDDnyuU-II1CPA-t500x500.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '3000$ Fakes',
                                 price: '150,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-NeyXExkbVtDDnyuU-II1CPA-t500x500.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '4000$ Fakes',
                                 price: '200,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-NeyXExkbVtDDnyuU-II1CPA-t500x500.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '5000$ Fakes',
                                 price: '250,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-NeyXExkbVtDDnyuU-II1CPA-t500x500.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '6000$ Fakes',
                                 price: '300,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-NeyXExkbVtDDnyuU-II1CPA-t500x500.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '7000$ Fakes',
                                 price: '350,00$',
-                                thumbnail: 'https://i1.sndcdn.com/artworks-NeyXExkbVtDDnyuU-II1CPA-t500x500.jpg'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                         ]
                     },
@@ -208,32 +204,32 @@
                             {
                                 name: '50.000 Vbucks',
                                 price: '50,00$',
-                                thumbnail: 'https://www.cnet.com/a/img/resize/2e09f7fdec3e96c351c484bb9dc7e6eef9a64722/hub/2020/02/14/676146ec-f899-4c73-a132-99f7bff87827/vbucks.png?auto=webp&fit=crop&height=900&width=1200'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },  
                             {
                                 name: '70.000 Vbucks',
                                 price: '70,00$',
-                                thumbnail: 'https://www.cnet.com/a/img/resize/2e09f7fdec3e96c351c484bb9dc7e6eef9a64722/hub/2020/02/14/676146ec-f899-4c73-a132-99f7bff87827/vbucks.png?auto=webp&fit=crop&height=900&width=1200'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '100.000 Vbucks',
                                 price: '100,00$',
-                                thumbnail: 'https://www.cnet.com/a/img/resize/2e09f7fdec3e96c351c484bb9dc7e6eef9a64722/hub/2020/02/14/676146ec-f899-4c73-a132-99f7bff87827/vbucks.png?auto=webp&fit=crop&height=900&width=1200'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '150.000 Vbucks',
                                 price: '150,00$',
-                                thumbnail: 'https://www.cnet.com/a/img/resize/2e09f7fdec3e96c351c484bb9dc7e6eef9a64722/hub/2020/02/14/676146ec-f899-4c73-a132-99f7bff87827/vbucks.png?auto=webp&fit=crop&height=900&width=1200'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '200.000 Vbucks',
                                 price: '200,00$',
-                                thumbnail: 'https://www.cnet.com/a/img/resize/2e09f7fdec3e96c351c484bb9dc7e6eef9a64722/hub/2020/02/14/676146ec-f899-4c73-a132-99f7bff87827/vbucks.png?auto=webp&fit=crop&height=900&width=1200'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                             {
                                 name: '300.000 Vbucks',
                                 price: '300,00$',
-                                thumbnail: 'https://www.cnet.com/a/img/resize/2e09f7fdec3e96c351c484bb9dc7e6eef9a64722/hub/2020/02/14/676146ec-f899-4c73-a132-99f7bff87827/vbucks.png?auto=webp&fit=crop&height=900&width=1200'
+                                thumbnail: 'https://i.pinimg.com/236x/2e/d8/da/2ed8dac6dc9f01a1c557c0d1b3a775ef.jpg'
                             },
                         ]
                     },
