@@ -48,8 +48,8 @@
                         {{ page.label }}
                     </header>
                     <main class="w-full h-full grid lg:grid-cols-4 grid-cols-1 gap-12 overflow-y-scroll overflow-hidden">
-                        <div v-for="(product, i_product) in page.products" class="col-span-1 lg:h-[370px] h-[450px] rounded-2xl bg-black/30 backdrop-blur-sm p-4 flex flex-col">
-                            <span class="w-full h-auto">
+                        <div v-for="(product, i_product) in page.products" class="col-span-1 lg:h-[370px] h-[450px] rounded-2xl bg-black/30 backdrop-blur-sm p-4 flex flex-col justify-between overflow-hidden">
+                            <span class="w-full h-[200px] mb-8">
                                 <img :src='product.thumbnail' class="rounded-2xl object-cover">
                             </span>
                             <span class="w-full h-full py-2 flex flex-col justify-center">
