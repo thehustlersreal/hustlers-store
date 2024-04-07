@@ -53,7 +53,7 @@
                                 <h1 class="text-white font.medium">{{ product.name }}</h1>
                                 <p class="text-sm text-zinc-400">Price: {{ product.price }}</p>
                                 <span class="w-full flex items-center gap-x-2 py-2">
-                                    <button class="rounded-xl w-full py-2 flex items-center justify-center bg-emerald-500 text-white text-sm flex items-center justfiy-center transition-all cursor-pointer hover:opacity-80">
+                                    <button @click="checkout(product.name, product.price)" class="rounded-xl w-full py-2 flex items-center justify-center bg-emerald-500 text-white text-sm flex items-center justfiy-center transition-all cursor-pointer hover:opacity-80">
                                         Buy
                                     </button>
                                 </span>
@@ -61,9 +61,33 @@
                         </div>
                     </main>
                 </div>
+
+                <div :class="{ 'hidden' : !checkoutPage.active }" class="relative w-full h-full flex flex-col items-center lg:justify-normal justify-center gap-y-12">
+                    <header class="font-bold text-3xl text-white w-full h-fit ">
+                        Checkout: <span class="text-emerald-300">{{ checkoutPage.product_details.name }}</span>
+                    </header>
+                    <main class="w-full h-fit flex flex-wrap items-center justify-between space-y-4">
+                        <section class="w-fit h-full flex flex-col space-y-4 bg-black/50 p-4 rounded-2xl">
+                            <span class="w-fit h-fit flex flex-col space-y-1">
+                                <h1 class="text-md lg:text-lg text-zinc-300 font-medium tracking-[0.05]">
+                                    HUSTLERS - Break the matrix
+                                </h1>
+                                <h2 class="uppercase text-white text-4xl tracking-[0.2vw] font-bold">{{ checkoutPage.product_details.name }}</h2>
+                            </span>
+                            <h3 class="uppercase text-zinc-300 text-lg tracking-[0.05]">PRICE: {{ checkoutPage.product_details.price }}</h3>
+                            <p class="text-zinc-400 text-sm font-medium max-w-[400px]">
+                                <span class="text-emerald-400">Once I have paid how do I receive the money?</span> <br>
+                                First of all, it's very simple, just enter the PayPal email address you want the money to be deposited into a field. Since it is quite risky to deposit all the money in one go, it would be better to deposit 200 every hour.
+                            </p>
+                        </section>
+                        <section>
+
+                        </section>
+                    </main>
+                </div>
             </div>
 
-            <footer class="absolute hidden lg:flex flex-col bottom-0 z-0 bg-zinc-950 w-full h-fit px-6 py-4">
+            <footer class="inherit hidden lg:flex flex-col bottom-0 z-0 bg-zinc-950 w-full h-fit px-6 py-4 mt-8">
                 <section class="w-full h-fit text-lg text-zinc-300">
                     Footer
                 </section>
@@ -234,20 +258,41 @@
                             },
                         ]
                     },
-                ]
+                ],
+
+                checkoutPage: {
+
+                    product_details: {
+                        name: '',
+                        price: '',
+                    },
+
+                    active: false,
+                },
             },
             methods: {
                 changePage: function(index) {
                     for (var i = 0; i < this.pages.length; i++) {
                         this.pages[i].active = (i === index);
                     }
-                }
+                },
+
+                checkout: function(product_name, product_price) {
+                    for (var i = 0; i < this.pages.length; i++) {
+                        this.pages[i].active = false;
+                    }
+
+                    this.checkoutPage.active = true
+
+                    this.checkoutPage.product_details.name = product_name;
+                    this.checkoutPage.product_details.price = product_price;
+                },
             },
             mounted() {
 
             },
             created() {
-                console.log('Active');
+                //
             }
         })
     </script>
